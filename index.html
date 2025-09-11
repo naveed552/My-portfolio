@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio – Naveed Hussain Syed</title>
+  <meta name="description" content="Personal portfolio website of Naveed Hussain Syed – Project Coordinator" />
+  <meta name="theme-color" content="#0b0d12" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand__logo"></div>
+        <a href="#home" class="brand__link" id="brandName">Naveed Hussain Syed</a>
+      </div>
+      <nav class="nav__links" id="primaryNav">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#techstack">Tech Stack</a>
+        <a href="#education">Education</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="row">
+        <a id="resumeLink" class="btn nav__cta" href="./Resume1.pdf" download>Resume</a>
+        <button class="btn theme" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button class="btn menu" aria-expanded="false" aria-controls="menuDrawer" id="menuBtn">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home" data-section>
+      <div class="container hero__card">
+        <div class="hero__left">
+          <span class="hero__hello">Hello, It’s Me</span>
+          <h1 class="hero__name" id="name">Naveed Hussain Syed</h1>
+          <p class="hero__role">And I'm a <span id="role">Project Coordinator</span></p>
+          <p class="lead" id="summary"></p>
+          <div class="hero__socials" id="heroSocials"></div>
+          <div class="hero__meta" id="metaPills"></div>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#about">More About Me</a>
+            <a class="btn" id="resumeCTA" href="./resume.pdf" download>Resume</a>
+          </div>
+        </div>
+        <div class="hero__right">
+          <figure class="pfp">
+            <img src="pic.jpg" alt="Portrait of Naveed Hussain Syed" loading="eager"/>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERNSHIPS -->
+    <section id="internships" data-section>
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Internships</h2>
+          <p class="section__desc">Hands-on experience across ML, Cloud, and Operations.</p>
+        </div>
+        <div class="timeline" id="internshipsGrid"></div>
+      </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section id="techstack" data-section>
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Tech Stack</h2>
+          <p class="section__desc">Tools and capabilities I work with every day.</p>
+        </div>
+        <div class="card">
+          <div class="chips" id="techGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" data-section>
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">About</h2>
+          <p class="section__desc">Who I am & what I do</p>
+        </div>
+        <div class="card" id="aboutText"></div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" data-section>
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Experience</h2>
+          <p class="section__desc">Roles, responsibilities, and impact across internships and positions.</p>
+        </div>
+        <div class="timeline" id="experienceGrid"></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" data-section>
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Projects</h2>
+          <p class="section__desc">Selected work highlighting problem-solving, data analysis, and delivery.</p>
+        </div>
+        <div class="grid grid--3" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" data-section>
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Skills</h2>
+          <p class="section__desc">A mix of coordination, communication, analytics, and tooling.</p>
+        </div>
+        <div class="card">
+          <div class="grid grid--3" id="skillsGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" data-section>
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Education</h2>
+          <p class="section__desc">Academic background and key performance highlights.</p>
+        </div>
+        <div class="timeline" id="educationGrid"></div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" data-section>
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Certifications</h2>
+          <p class="section__desc">Credentials that validate skills and learning.</p>
+        </div>
+        <div class="grid" id="certsList"></div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" data-section>
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Achievements & Internships</h2>
+          <p class="section__desc">Awards, milestones, and practical exposure.</p>
+        </div>
+        <div class="grid" id="achievementsList"></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS (optional) -->
+    <section id="testimonials" data-section>
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Testimonials</h2>
+          <p class="section__desc">What people say</p>
+        </div>
+        <div class="grid grid--3" id="testimonialsGrid"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" data-section>
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Contact</h2>
+          <p class="section__desc">Let’s discuss opportunities, collaborations, or questions.</p>
+        </div>
+        <div class="grid grid--2">
+          <div class="card">
+            <h3>Send a message</h3>
+            <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+              <input type="hidden" name="access_key" value="3a6b048b-dafa-4264-86de-9a5c1bb448e7" />
+              <input type="checkbox" name="botcheck" id="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+              <input type="hidden" name="from_name" value="Portfolio – Naveed Hussain Syed" />
+              <input type="hidden" name="subject" value="New message via portfolio" />
+              <div class="input">
+                <label for="nameInput">Name</label>
+                <input id="nameInput" name="name" type="text" placeholder="Enter your name" required />
+              </div>
+              <div class="input">
+                <label for="emailInput">Email</label>
+                <input id="emailInput" name="email" type="email" placeholder="Enter your email" required />
+              </div>
+              <div class="input">
+                <label for="phoneInput">Subject</label>
+                <input id="phoneInput" name="subject" type="text" placeholder="Enter your subject" />
+              </div>
+              <div class="input">
+                <label for="messageInput">Message</label>
+                <textarea id="messageInput" name="message" placeholder="Enter your message" required></textarea>
+              </div>
+              <button class="btn btn--primary" type="submit">Send</button>
+              <span id="formMsg" role="status" aria-live="polite"></span>
+            </form>
+          </div>
+          <div class="card">
+            <div class="contact__left">
+              <h2 class="contact__title">Contact <span>Me</span></h2>
+              <p class="contact__eyebrow">Let's work Together</p>
+              <p class="contact__desc">Have a project idea, job opportunity, or just want to connect? Feel free to reach out. I’m open to discussing opportunities in project coordination and technology.</p>
+              <div id="contactList" class="contact__list"></div>
+              <div id="contactSocials" class="contact__socials"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container row row--between">
+      <p id="footerText">© <span id="year"></span> Naveed Hussain Syed. All rights reserved.</p>
+      <div class="row" id="socials"></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
