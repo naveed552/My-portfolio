@@ -4,7 +4,7 @@ const RESUME = {
   location: "Bangalore, India",
   summary: "I am a Software & IT Professional with a strong foundation in Computer Science Engineering,\ncomplemented by hands-on experience in Machine Learning, Cloud Computing, and CRM systems.\nSkilled in problem-solving, collaboration, and project execution, I aim to deliver impactful solutions that bridge technology and business needs.",
   meta: ["Open to Project Management Roles", "Strong in Coordination & Communication", "Based in Bangalore"],
-  resumePdf: "./resume1.pdf",
+  resumePdf: "https://naveedhussainsyed.vercel.app/Resume1.pdf",
   about: `I am Naveed Hussain Syed, a detail-oriented and motivated Project Coordinator with strong experience in project management, cross-functional collaboration, and client relationship handling. With a background in Computer Science Engineering, I bring both technical knowledge and organizational expertise to drive projects toward successful completion.
 
 I have worked in diverse roles ranging from social media management at SISF (NGO) to client coordination at Zolostays, gaining experience in CRM strategy, communication, and stakeholder engagement. My internship experiences in Machine Learning and Cloud Computing have further strengthened my technical foundation, giving me a unique ability to bridge the gap between technical and managerial aspects of projects.
@@ -170,8 +170,33 @@ function render() {
   qs("#brandName").textContent = RESUME.name;
   qs("#name").textContent = RESUME.name;
   qs("#role").textContent = RESUME.role;
-  qs("#resumeLink").setAttribute("href", RESUME.resumePdf);
-  qs("#resumeCTA")?.setAttribute("href", RESUME.resumePdf);
+  // Set resume links with fallback handling
+  const resumePath = RESUME.resumePdf;
+  qs("#resumeLink").setAttribute("href", resumePath);
+  qs("#resumeCTA")?.setAttribute("href", resumePath);
+  
+  // Add click handlers for better error handling and fallback
+  const resumeLinks = document.querySelectorAll('a[href*="Resume1.pdf"], a[id*="resume"]');
+  resumeLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      console.log('Resume download clicked:', link.href);
+      
+      // Fallback: If download fails, open in new tab
+      setTimeout(() => {
+        // Check if download was successful (this is a simple check)
+        const testLink = document.createElement('a');
+        testLink.href = link.href;
+        testLink.download = 'Naveed_Hussain_Syed_Resume.pdf';
+        testLink.target = '_blank';
+        
+        // If the original link doesn't have download attribute working, use fallback
+        if (!link.hasAttribute('download') || link.getAttribute('download') === '') {
+          e.preventDefault();
+          window.open(link.href, '_blank');
+        }
+      }, 100);
+    });
+  });
 
   const meta = qs("#metaPills");
   RESUME.meta.forEach(m => {
